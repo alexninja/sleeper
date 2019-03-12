@@ -272,11 +272,11 @@ void Window::Suspend()
 /////////////////////////////////////////////////////////////////////////////////////////////
 // sleep
 
-BOOL CALLBACK DialogProc(HWND, UINT, WPARAM, LPARAM);
+INT_PTR CALLBACK DialogProc(HWND, UINT, WPARAM, LPARAM);
 
 void Window::SetTimeout()
 {
-    INT_PTR result = DialogBox(hInstance_, MAKEINTRESOURCE(IDD_TIMEOUT), hwnd_, DialogProc);
+    int result = (int) DialogBox(hInstance_, MAKEINTRESOURCE(IDD_TIMEOUT), hwnd_, DialogProc);
     if (result) {
         hrs_ = result / 60;
         mins_ = result % 60;

@@ -1,6 +1,6 @@
 #include "common.h"
 
-BOOL CALLBACK DialogProc(HWND hdlg, UINT message, WPARAM wParam, LPARAM lParam)
+INT_PTR CALLBACK DialogProc(HWND hdlg, UINT message, WPARAM wParam, LPARAM lParam)
 {
     switch(message)
     {
